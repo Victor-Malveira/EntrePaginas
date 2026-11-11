@@ -43,7 +43,7 @@ function dadosAnalytics($itens) {
 function cabecalho($titulo = 'Entre Páginas') {
  $eventos = $_SESSION['eventos_analytics'] ?? [];
  unset($_SESSION['eventos_analytics']); ?>
-<!DOCTYPE html><html lang="pt-br"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title><?= h($titulo) ?> | Entre Páginas</title><link rel="stylesheet" href="css/estilo.css"><script async src="https://www.googletagmanager.com/gtag/js?id=G-VD4131DXST"></script>
+<!DOCTYPE html><html lang="pt-br"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title><?= h($titulo) ?> | Entre Páginas</title><link rel="stylesheet" href="css/estilo.css?v=5"><script async src="https://www.googletagmanager.com/gtag/js?id=G-VD4131DXST"></script>
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
