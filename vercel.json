@@ -7,10 +7,15 @@
   },
   "routes": [
     {
-      "handle": "filesystem"
+      "src": "^/(css|js)/([a-zA-Z0-9_.-]+)$",
+      "dest": "/$1/$2"
     },
     {
-      "src": "^/(?:|(?:index|cadastro|carrinho|finalizar|login|logout|meus_pedidos|pedido|produto|privacidade)\\.php)$",
+      "src": "^/$",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "^/(index|cadastro|carrinho|finalizar|login|logout|meus_pedidos|pedido|produto|privacidade)\\.php$",
       "dest": "/api/index.php"
     }
   ]
