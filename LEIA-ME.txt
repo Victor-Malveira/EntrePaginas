@@ -1,0 +1,28 @@
+ENTRE PÁGINAS — VERSÃO 3 (BOXES)
+
+INSTALAÇÃO NOVA:
+1. Extraia a pasta livraria para C:\xampp\htdocs\
+2. Inicie Apache e MySQL no XAMPP.
+3. Importe banco.sql UMA VEZ em http://localhost/phpmyadmin
+4. Abra http://localhost/livraria/
+
+ATUALIZAÇÃO DE UMA INSTALAÇÃO DA VERSÃO 2:
+1. Substitua os arquivos PHP e CSS pelos deste ZIP.
+2. NÃO importe banco.sql novamente.
+3. No phpMyAdmin, selecione o banco livraria e importe SOMENTE atualizacao_boxes.sql, UMA VEZ.
+4. Abra a loja e veja a seção Boxes.
+
+Para adicionar um box via phpMyAdmin:
+INSERT INTO boxes (nome,descricao,preco_original,preco_promocional,estoque,cor,simbolo)
+VALUES ('Box Saga Exemplo','Coleção completa com 4 volumes.',220.00,169.90,10,'#5c557e','✦');
+
+O card é gerado automaticamente na seção Boxes.
+Opcional: associe livros existentes ao box na tabela box_livros.
+Exemplo: INSERT INTO box_livros (box_id,livro_id) VALUES (1,1),(1,2);
+
+OBSERVAÇÕES:
+- O estoque dos boxes é independente do estoque dos livros individuais.
+- Descontos são calculados comparando preço_original e preco_promocional.
+- Pagamentos PIX, cartão e boleto são simulações sem cobranças reais.
+- O exemplo é fictício; para Harry Potter, cadastre um box com esse nome e seus volumes.
+- O SQL de atualização não é idempotente: não execute duas vezes.

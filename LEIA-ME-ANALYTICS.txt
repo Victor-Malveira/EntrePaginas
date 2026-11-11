@@ -1,0 +1,13 @@
+ENTRE PÁGINAS — Atualização Google Analytics 4
+ID: G-VD4131DXST
+
+ATENÇÃO: preserve o seu conexao.php JÁ CONFIGURADO no InfinityFree! Não substitua por este ZIP.
+Envie funcoes.php, index.php, carrinho.php, finalizar.php, pedido.php, produto.php, privacidade.php, css/estilo.css e js/analytics.js para htdocs, mantendo as pastas.
+Nenhuma alteração de banco de dados é necessária.
+
+Consentimento: negado por padrão, banner com aceitar/recusar e link de privacidade. O navegador lembra a escolha.
+Eventos: view_item ao abrir detalhes do produto, add_to_cart ao adicionar, begin_checkout ao visitar checkout, purchase após confirmar o pedido (uma vez por sessão de compra).
+Os eventos são emitidos no carregamento da página seguinte após a ação. Para teste, aceite cookies e abra Analytics > Tempo real ou DebugView.
+Aviso: dados de compra são simulados. Eventos anteriores à aceitação não são recuperados automaticamente. A política de privacidade é um texto inicial e deve ser revisada com dados reais do responsável e canais de contato.
+
+Importante: não mantenha uma segunda tag GA4 no funcoes.php. Esta atualização já a inclui. Se houver tag antiga, substitua o arquivo pelo atualizado.
