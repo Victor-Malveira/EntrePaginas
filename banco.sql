@@ -73,3 +73,32 @@ ON DUPLICATE KEY UPDATE titulo=VALUES(titulo), autor=VALUES(autor), preco=VALUES
 INSERT INTO boxes (id,nome,descricao,preco_original,preco_promocional,estoque,cor,simbolo)
 VALUES (1,'Box Crônicas de Âmbar','Trilogia fictícia completa em edição especial.',179.70,139.90,8,'#654b7b','✦')
 ON DUPLICATE KEY UPDATE nome=VALUES(nome),descricao=VALUES(descricao),preco_original=VALUES(preco_original),preco_promocional=VALUES(preco_promocional),cor=VALUES(cor),simbolo=VALUES(simbolo);
+
+-- Catálogo de fantasia e boxes (preços ilustrativos do projeto).
+-- IDs novos preservam os produtos de pedidos de teste anteriores.
+INSERT INTO livros (id,titulo,autor,preco,estoque,cor,simbolo) VALUES
+(7,'A Guerra dos Tronos','George R. R. Martin',69.90,20,'#343f51','♛'),
+(8,'A Fúria dos Reis','George R. R. Martin',74.90,20,'#6e3535','♛'),
+(9,'A Tormenta de Espadas','George R. R. Martin',79.90,20,'#4d5369','♛'),
+(10,'O Festim dos Corvos','George R. R. Martin',74.90,20,'#55505d','♛'),
+(11,'A Dança dos Dragões','George R. R. Martin',84.90,20,'#6e5542','♛'),
+(12,'Harry Potter e a Pedra Filosofal','J. K. Rowling',54.90,20,'#75512e','✦'),
+(13,'Harry Potter e a Câmara Secreta','J. K. Rowling',54.90,20,'#72543c','✦'),
+(14,'Harry Potter e o Prisioneiro de Azkaban','J. K. Rowling',59.90,20,'#536075','✦'),
+(15,'Harry Potter e o Cálice de Fogo','J. K. Rowling',64.90,20,'#764b3d','✦'),
+(16,'Harry Potter e a Ordem da Fênix','J. K. Rowling',69.90,20,'#65556b','✦'),
+(17,'Harry Potter e o Enigma do Príncipe','J. K. Rowling',64.90,20,'#526453','✦'),
+(18,'Harry Potter e as Relíquias da Morte','J. K. Rowling',69.90,20,'#494d5d','✦'),
+(19,'O Último Desejo','Andrzej Sapkowski',59.90,20,'#505d59','⚔'),
+(20,'O Ladrão de Raios','Rick Riordan',49.90,20,'#376b8d','⚡'),
+(21,'O Império Final','Brandon Sanderson',79.90,20,'#39434a','✦')
+ON DUPLICATE KEY UPDATE titulo=VALUES(titulo),autor=VALUES(autor),preco=VALUES(preco),cor=VALUES(cor),simbolo=VALUES(simbolo);
+
+INSERT INTO boxes (id,nome,descricao,preco_original,preco_promocional,estoque,cor,simbolo) VALUES
+(2,'Box As Crônicas de Gelo e Fogo','Coleção com os cinco romances publicados de As Crônicas de Gelo e Fogo, de George R. R. Martin.',384.50,319.90,10,'#343f51','♛'),
+(3,'Box Harry Potter','Coleção completa dos sete romances de Harry Potter, de J. K. Rowling.',439.30,359.90,10,'#75512e','✦')
+ON DUPLICATE KEY UPDATE nome=VALUES(nome),descricao=VALUES(descricao),preco_original=VALUES(preco_original),preco_promocional=VALUES(preco_promocional),cor=VALUES(cor),simbolo=VALUES(simbolo);
+
+INSERT IGNORE INTO box_livros (box_id,livro_id) VALUES
+(2,7),(2,8),(2,9),(2,10),(2,11),
+(3,12),(3,13),(3,14),(3,15),(3,16),(3,17),(3,18);
